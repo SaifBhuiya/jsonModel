@@ -1,4 +1,4 @@
-# CRUD_APP
+# CRUD_APP (jsonModel)
 
 This was my first time trying React and Flask. This part of the project helped me understand how to communicate between python and JS. I learned how to manipulate JSON data. How to extract values from it. How to run the project locally and test features.
 
