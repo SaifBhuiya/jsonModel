@@ -8,25 +8,28 @@ function App() {
         order: "desc"
     });
 
+    // Use environment variable or fallback to a relative URL
+    const API_URL = process.env.REACT_APP_API_URL || "/api";
+
     useEffect(() => {
-        // Fetch data whenever sort configuration changes
-        fetch(`http://127.0.0.1:5000/members/sort?by=${sortConfig.by}&order=${sortConfig.order}`)
+        // Use the API_URL instead of hardcoded localhost
+        fetch(`${API_URL}/members/sort?by=${sortConfig.by}&order=${sortConfig.order}`)
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error("Error fetching data:", error));
-    }, [sortConfig]); // Re-fetch when sort config changes
+    }, [sortConfig, API_URL]); // Added API_URL to dependencies
 
-    // Function to handle column header clicks
+    // Function to handle column header clicks 
     const handleSort = (column) => {
         setSortConfig(prevState => {
-            // If clicking the same column, toggle the sort order
+            // If clicking the same column, toggle the sort order 
             if (prevState.by === column) {
                 return {
                     by: column,
                     order: prevState.order === "asc" ? "desc" : "asc"
                 };
             }
-            // If clicking a different column, default to ascending
+            // If clicking a different column, default to ascending 
             return {
                 by: column,
                 order: "asc"
@@ -34,7 +37,7 @@ function App() {
         });
     };
 
-    // Function to render sort direction indicators
+    // Function to render sort direction indicators 
     const getSortIndicator = (column) => {
         if (sortConfig.by === column) {
             return sortConfig.order === "asc" ? " ↑" : " ↓";
