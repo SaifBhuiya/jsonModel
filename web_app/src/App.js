@@ -10,7 +10,7 @@ function App() {
 
     useEffect(() => {
         // Fetch data whenever sort configuration changes
-        fetch(`https://jsonmodel-production.up.railway.app/members/sort?by=${sortConfig.by}&order=${sortConfig.order}`)
+        fetch(`http://127.0.0.1:5000/members/sort?by=${sortConfig.by}&order=${sortConfig.order}`)
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error("Error fetching data:", error));
