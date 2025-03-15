@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
     // Function to render sort direction indicators 
     const getSortIndicator = (column) => {
         if (sortConfig.by === column) {
-            return sortConfig.order === "asc" ? " (asc)" : " (dec)";
+            return sortConfig.order === "asc" ? " ↑" : " ↓";
         }
         return "";
     };
