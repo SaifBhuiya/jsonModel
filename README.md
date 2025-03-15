@@ -6,4 +6,4 @@ This was a good introduction to the basics. I have worked on personal porftfolio
 
 I have worked on python and similar languages (GDscript) but I dont think I have ever made a full fledged python app. A lot of things were new: making requirements.txt, console commands to install/build/run stuff etc.
 
-This was my first time using a cloud hosting service. I havent worked with an app that uses a backend.
+This was my first time using a cloud hosting service. I havent worked with an app that uses a backend. This served as an introduction and helped me with the later parts where I used SQL.
